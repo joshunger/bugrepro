@@ -1,0 +1,93 @@
+@import './bb-ui.less';
+@import './theme.less';
+
+@hannah-image-width: 1440;
+@hannah-left-margin: 450;
+
+.purchase-subscription {
+  background-image: url('hannah-eden.png');
+  background-repeat: no-repeat;
+  // background-size: 100%;
+  background-position: calc(100% / @hannah-image-width * @hannah-left-margin) 0;
+  height: 100%; // temp
+  display: flex;
+  flex-direction: row;
+}
+
+.purchase-access {
+  margin-left: calc(100% / @hannah-image-width * @hannah-left-margin);
+  padding-top: 30px; // px required for image
+}
+
+.all-access-features {
+
+}
+
+.feature-row {
+  display: table-row;
+}
+
+.purchase-subscription-box {
+  background-color: white;
+  height: 100%;
+  // no max-width
+  padding-left: 3%;
+  padding-right: 3%;
+  margin-right: 40px; // TODO remove hard-coded
+}
+
+.all-access-primary-highlight {
+  color: var(--theme-secondary);
+}
+
+.all-access-feature {
+  display: table-cell;
+  // padding-left: 35px;
+  // padding-top: 5px;
+  // padding-bottom: 5px;
+  // background-size: contain;
+  // background-repeat: no-repeat;
+  padding: 3%;
+  vertical-align: middle;
+}
+
+.purchase-subscription-header {
+  white-space: nowrap;
+}
+
+.all-access-feature-icon {
+  display: table-cell;
+  text-align: center;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+@media @MQ-lte-mobile {
+  .purchase-subscription {
+    // background-position: -100px 0;
+    // background-position: left -100px right 0;
+  }
+  .purchase-subscription-box {
+    margin-right: 0;
+  }
+  .purchase-access {
+    display: none;
+  }
+  // .purchase-subscription-box {
+  //   max-width: 100%;
+  // }
+}
+
+// size of image
+@media (min-width: 868px) {
+  .purchase-subscription {
+    // background-position: -100/768*100% 0;
+  }
+}
+
+// background-position: -100px 0
+
+// @MQ-mobile: ~'(max-width: 767px)';
+// @MQ-gte-tablet: ~'(min-width: 768px)';
+// @MQ-gte-desktop: ~'(min-width: 992px)';
+// @MQ-gte-wide-desktop: ~'(min-width: 1200px)';
