@@ -1,3 +1,9 @@
+@theme-secondary: #73C347;
+
 :root {
-  --theme-secondary: #73C347;
+  --theme-secondary: @theme-secondary;
+}
+
+.theme-secondary {
+  color: var(--theme-secondary, @theme-secondary);
 }

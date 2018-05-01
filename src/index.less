@@ -1,14 +1,15 @@
 @import './bb-ui.less';
 @import './theme.less';
 
-@hannah-image-width: 1440;
+@hannah-image-height: unit(image-height('hannah-eden.png'));
+@hannah-image-width: unit(image-width('hannah-eden.png'));
 @hannah-left-margin: 450;
 
 .purchase-subscription {
   background-image: url('hannah-eden.png');
   background-repeat: no-repeat;
   background-position: calc(100% / @hannah-image-width * @hannah-left-margin) 0;
-  height: 100%; // temp
+  height: unit(@hannah-image-height, px);
   display: flex;
   flex-direction: row;
 }
