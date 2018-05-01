@@ -7,6 +7,7 @@ module.exports = {
   entry: ['babel-polyfill', './src/index.jsx'],
   module: {
     rules: [
+      { test: /\.hbs$/, loader: "handlebars-loader", query: { inlineRequires: '\/images\/' } },
       {
         test: /\.less$/,
         use: [          {
@@ -65,7 +66,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: 'src/index.html',
+      template: 'src/index.hbs',
     }),
   ],
   resolve: {
