@@ -14,7 +14,8 @@
   flex-direction: row;
 }
 
-.purchase-access {
+.all-access-features {
+  // offset the text so it doesn't overlap Hannah's head
   margin-left: calc(100% / @hannah-image-width * @hannah-left-margin);
   padding-top: 30px; // px required for image
 }
@@ -26,7 +27,7 @@
 .purchase-subscription-box {
   background-color: white;
   height: 100%;
-  // no max-width
+  flex: 0;
   padding-left: 3%;
   padding-right: 3%;
   margin-right: 40px; // TODO remove hard-coded?
@@ -57,7 +58,7 @@
   .purchase-subscription-box {
     margin-right: 0;
   }
-  .purchase-access {
+  .all-access-features {
     display: none;
   }
 }
