@@ -7,15 +7,27 @@ module.exports = {
   entry: ['babel-polyfill', './src/index.jsx'],
   module: {
     rules: [
-      { test: /\.hbs$/, loader: "handlebars-loader", query: { inlineRequires: '\/images\/' } },
+      {
+        test: /\.hbs$/,
+        loader: 'handlebars-loader',
+        query: { inlineRequires: '/images/' },
+      },
       {
         test: /\.less$/,
-        use: [          {
-          loader: 'style-loader', // creates style nodes from JS strings
-        },
-        {
-          loader: 'css-loader',
-        },{loader: 'less-loader'}]
+        use: [
+          {
+            loader: 'style-loader', // creates style nodes from JS strings
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              paths: [path.resolve(__dirname, 'node_modules/bb-ui/app')],
+            },
+          },
+        ],
       },
       {
         test: /\.scss$/,

@@ -1,70 +1,8 @@
-@import './bb-ui.less';
-@import './theme.less';
+@import '../../../bb-ui/app/bb/ui/baseless/variables.less';
 
-@hannah-image-height: unit(image-height('hannah-eden.png'));
-@hannah-image-width: unit(image-width('hannah-eden.png'));
-@hannah-left-margin: 450;
-
-.purchase-subscription {
-  background-image: url('hannah-eden.png');
-  background-repeat: no-repeat;
-  background-position: calc(100% / @hannah-image-width * @hannah-left-margin) 0;
-  height: unit(@hannah-image-height, px);
-  display: flex;
-  flex-direction: row;
+html {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 62.5%;
 }
 
-.all-access-features {
-  // offset the text so it doesn't overlap Hannah's head
-  margin-left: calc(100% / @hannah-image-width * @hannah-left-margin);
-  padding-top: 30px; // px required for image
-}
-
-.feature-row {
-  display: table-row;
-}
-
-.purchase-subscription-box {
-  background-color: white;
-  height: 100%;
-  flex: 0;
-  padding-left: 3%;
-  padding-right: 3%;
-  margin-right: 40px; // TODO remove hard-coded?
-}
-
-.free-trial-highlight {
-  color: var(--theme-secondary);
-}
-
-.all-access-feature {
-  display: table-cell;
-  padding: 3%;
-  vertical-align: middle;
-}
-
-.subscription-type {
-  white-space: nowrap;
-}
-
-.all-access-feature-icon {
-  display: table-cell;
-  text-align: center;
-  padding: 5px; // %?
-  vertical-align: middle;
-}
-
-@media @MQ-lte-mobile {
-  .purchase-subscription-box {
-    flex: 1; // grow to the full width
-    margin-right: 0;
-  }
-  .all-access-features {
-    display: none;
-  }
-}
-
-// @MQ-mobile: ~'(max-width: 767px)';
-// @MQ-gte-tablet: ~'(min-width: 768px)';
-// @MQ-gte-desktop: ~'(min-width: 992px)';
-// @MQ-gte-wide-desktop: ~'(min-width: 1200px)';
+@import '../../../store-app/app/bb/store/subscription/less/account.less';

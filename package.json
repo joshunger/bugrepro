@@ -7,6 +7,7 @@
     "babel-loader": "^7.1.4",
     "babel-polyfill": "^6.26.0",
     "babel-preset-react": "^6.24.1",
+    "bb-ui": "^19",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
     "handlebars": "^4.0.11",
@@ -20,6 +21,9 @@
     "webpack": "^4.6.0",
     "webpack-cli": "^2.0.14",
     "webpack-serve": "1.0.0-beta.1"
+  },
+  "publishConfig": {
+    "registry": "http://artifactory/api/npm/npm-local"
   },
   "scripts": {
     "build": "npx webpack",
