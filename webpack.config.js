@@ -14,23 +14,6 @@ module.exports = {
         query: { inlineRequires: '/images/' },
       },
       {
-        test: /\.less$/,
-        use: [
-          {
-            loader: 'style-loader', // creates style nodes from JS strings
-          },
-          {
-            loader: 'css-loader',
-          },
-          {
-            loader: 'less-loader',
-            options: {
-              paths: [path.resolve(__dirname, 'node_modules/bb-ui/app')],
-            },
-          },
-        ],
-      },
-      {
         test: /\.scss$/,
         use: [
           {
@@ -77,15 +60,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: 'src/index.hbs',
-    }),
-    new HtmlWebPackPlugin({
-      template: 'src/google-docs-repro.html',
-      filename: 'google-docs-repro.html',
-    }),
-  ],
+  plugins: [new HtmlWebPackPlugin()],
   resolve: {
     extensions: ['.js', '.jsx'],
   },
