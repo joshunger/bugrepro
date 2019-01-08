@@ -9,6 +9,28 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.hbs$/,
+        loader: 'handlebars-loader',
+        query: { inlineRequires: '/images/' },
+      },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: 'style-loader', // creates style nodes from JS strings
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              paths: [path.resolve(__dirname, 'node_modules/bb-ui/app')],
+            },
+          },
+        ],
+      },
+      {
         test: /\.scss$/,
         use: [
           {
@@ -57,7 +79,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: 'src/index.html',
+      template: 'src/index.hbs',
     }),
     new HtmlWebPackPlugin({
       template: 'src/google-docs-repro.html',
