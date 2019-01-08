@@ -1,3 +1,4 @@
+// import CopyWebpackPlugin from 'copy-webpack-plugin';
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const glob = require('glob');
 const path = require('path');
@@ -57,6 +58,10 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       template: 'src/index.html',
+    }),
+    new HtmlWebPackPlugin({
+      template: 'src/google-docs-repro.html',
+      filename: 'google-docs-repro.html',
     }),
   ],
   resolve: {
